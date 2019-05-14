@@ -1,0 +1,99 @@
+#PDF MOD Rewrite
+RewriteRule ^PDFs/(.*)_(.*)\.pdf$ pdf-not-exists.php?keywords=$2 [L,QSA]
+RewriteRule ^(.*)\.pdf$ pdf-not-exists.php?keywords=$1 [L,QSA]
+RewriteRule ^(.*)\.doc$ doc-generator.php?title=$1 [L]
+RewriteRule ^(.*)\.rtf$ rtf-generator.php?title=$1 [L]
+
+
+#sitemap pdf
+RewriteRule ^sitemap.xml$ xml-sitemap-index.php [L]
+RewriteRule ^pdf-index/(.*)\.xml$ xml-sitemap.php?file=$1.txt [L]
+
+#rss indexer
+RewriteRule ([0-9]+)rss$ indexer.php?url=$1 [L]
+RewriteRule indexer$ superindexer.php?url=$1 [L]
+
+#feed v2
+RewriteRule top(.*)$ rapid.php?url=$1 [L]
+RewriteRule cox(.*)$ cox.php?url=$1 [L]
+RewriteRule zcox(.*)$ zcox.php?url=$1 [L]
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www.foreplay.tk [NC]
+RewriteRule ^(.*)$ http://foreplay.tk/$1 [L,R=301,NC]
+
+#subdomain
+RewriteRule sub(.*)$ sub.php?url=$1 [L]
+
+RewriteRule ^telecharger/([A-Za-z0-9-]+)?$ rotator.php?asin=$1
+RewriteRule ^livre/([A-Za-z0-9-]+)?$ tag.php?asin=$1
+RewriteRule ^auteur/([A-Za-z0-9-]+)?$ author.php?asin=$1
+ErrorDocument 404 /404.php
+RewriteRule ^search?$ signup.php?url=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteRule ^([A-Za-z0-9-]+)/?_([A-Za-z0-9-]+)/?.jpg$ images.php?asin=$1&s=$2 [L]
+RewriteRule ([0-9]+).xml$ sitemap.xml.php?url=$1 [L]
+RewriteRule sitemap-index.xml$ sitemap-index.xml.php?url=$1 [L]
+RewriteRule feed(.*)$ feed.php?url=$1 [L]
+
+
+</IfModule>
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/pdf "access plus 1 month"
+ExpiresByType text/x-javascript "access plus 1 month"
+ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresDefault "access plus 2 days"
+</IfModule>
+## EXPIRES CACHING ##
+# Block Empty Referers
+# RewriteCond %{HTTP_REFERER} ^$
+# RewriteRule ^ - [F,L]
+
+# Blocking Bad Robots and Web Scrapers with RewriteRules
+# IF THE UA STARTS WITH THESE
+RewriteCond %{HTTP_USER_AGENT} ^(aesop_com_spiderman|alexibot|ahrefsbot|backweb|bandit|batchftp|bigfoot) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(black.?hole|blackwidow|blowfish|botalot|buddy|builtbottough|bullseye) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(cheesebot|cherrypicker|chinaclaw|collector|copier|copyrightcheck) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(cosmos|crescent|curl|custo|da|diibot|disco|dittospyder|dragonfly) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(drip|easydl|ebingbong|ecatch|eirgrabber|emailcollector|emailsiphon) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(emailwolf|erocrawler|exabot|eyenetie|filehound|feedfetcher|flashget|flunky) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(frontpage|getright|getweb|go.?zilla|go-ahead-got-it|gotit|grabnet) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(grafula|harvest|hloader|hmview|httplib|httrack|humanlinks|ilsebot) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(infonavirobot|infotekies|intelliseek|interget|iria|jennybot|jetcar) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(joc|justview|jyxobot|kenjin|keyword|larbin|leechftp|lexibot|lftp|libweb) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(likse|linkscan|linkwalker|lnspiderguy|lwp|magnet|mag-net|markwatch) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(mata.?hari|memo|microsoft.?url|midown.?tool|miixpc|mirror|missigua) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(mister.?pix|moget|mozilla.?newt|nameprotect|navroad|backdoorbot|nearsite) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(net.?vampire|netants|netcraft|netmechanic|netspider|nextgensearchbot) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(attach|nicerspro|nimblecrawler|npbot|octopus|offline.?explorer) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(offline.?navigator|openfind|outfoxbot|pagegrabber|papa|pavuk) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(pcbrowser|php.?version.?tracker|pockey|propowerbot|prowebwalker) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(psbot|pump|queryn|recorder|realdownload|reaper|reget|true_robot) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(repomonkey|rma|internetseer|sitesnagger|siphon|slysearch|smartdownload) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(snake|snapbot|snoopy|sogou|spacebison|spankbot|spanner|sqworm|superbot) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(superhttp|surfbot|asterias|suzuran|szukacz|takeout|teleport) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(telesoft|the.?intraformant|thenomad|tighttwatbot|titan|urldispatcher) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(turingos|turnitinbot|urly.?warning|vacuum|vci|voideye|whacker) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^(libwww-perl|widow|wisenutbot|wwwoffle|xaldon|xenu|zeus|zyborg|anonymouse) [NC,OR]
+
+# STARTS WITH WEB
+RewriteCond %{HTTP_USER_AGENT} ^web(zip|emaile|enhancer|fetch|go.?is|auto|bandit|clip|copier|master|reaper|sauger|site.?quester|whack) [NC,OR]
+
+# ANYWHERE IN UA -- GREEDY REGEX
+RewriteCond %{HTTP_USER_AGENT} ^.*(craftbot|download|extract|stripper|sucker|ninja|clshttp|webspider|leacher|collector|grabber|webpictures).*$ [NC]
+
+# ISSUE 403 / SERVE ERRORDOCUMENT
+RewriteRule . - [F,L]

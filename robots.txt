@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /contact.php
+Disallow: /disclaimer.php
+Disallow: /dmca.php
+Disallow: /dl.php
+Disallow: /read.php
+

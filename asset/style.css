@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic");
+.topreader img{width:100%;height: auto}
+.reader{background:url("readerbg.jpg") repeat-y;background-size: 100% auto;}
+.reader img{margin:-5px auto 0;width:94%;position:relative;height: auto}
+.overlay {
+    position: fixed;
+    z-index: 1000; /* Something high */
+    height: 280px;
+    width: 450px;
+    background: white;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px; /* Negative half width */
+    margin-top: -100px; /* Negative half height */
+    box-shadow: 0 0 0 2038px rgba(0,0,0,.5); /* The semi-transparent bg. Something weird about Safari and numbers bigger than this */
+    -webkit-transition: 1s; /* Little extra spice */
+	  border-radius: 5px;
+	  display:block
+}
+.ct{
+	margin: 20px 30px 0 30px;
+	font-size: 12px;
+	text-align:center;line-height:24px;font-weight:bold;
+}
+.blue{
+	color:#2370B6;
+	font-weight:bold;font-size: 16px;
+}
+.red{
+color: #ff0000; font-weight: bold;font-size: 16px;
+}
+.secure{font-size:12px;font-weight:bold;color:#777;margin-top:10px; text-align:center;}
+
+#continue{background:#2370b6;background:-moz-linear-gradient(top, #2370b6 0%, #226db3 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #2370b6), color-stop(100%, #226db3));background:-webkit-linear-gradient(top, #2370b6 0%, #226db3 100%);background:-o-linear-gradient(top, #2370b6 0%, #226db3 100%);background:-ms-linear-gradient(top, #2370b6 0%, #226db3 100%);background:linear-gradient(to bottom, #2370b6 0%, #226db3 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$special-blue', endColorstr='#226db3',GradientType=0 );border:0.0625rem solid #1d64a6;box-shadow:0 0 0 0.0625rem #428dd1 inset;color:#fff;font-size:1.3em;font-weight:bold;padding:1rem 2rem;text-decoration:none;text-transform:uppercase;text-shadow:0 0.0625rem 0 #333;-webkit-border-radius:0.3125rem;border-radius:0.3125rem;}
+#continue:hover{background:#277dcb}
+
+body{
+    width: 100%;
+    padding: 0;
+    margin: 50px 0;
+	background: transparent url("bg.jpg") no-repeat fixed center center / cover ;
+}
+
+.panel{
+    outline: none;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    font: 13px/1.55 'Open Sans',Helvetica,Arial,sans-serif;
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9);
+}
+
+.panel-body{
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
+}
+
+#description .row{
+    padding-bottom: 20px;
+
+}
+
+.panel-header{
+    padding: 20px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    background: #fff;
+    font-size: 25px;
+    font-weight: 300;
+    color: #232323;
+    text-align: center;
+
+}
+
+code.command {
+    color: #fff;
+    font-weight: bold;
+    background-color:#000;
+    font-family: monospace;
+    display: inline-block;
+    margin: 6px 6px 6px 6px;
+    padding: 12px 12px 12px 12px;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    width: 100%;
+    min-height: 400px;
+}
+
+.dl_button {
+    display: block;
+    background: -webkit-linear-gradient(#ffd34c, #fcb326); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffd34c, #fcb326); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffd34c, #fcb326); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ffd34c, #fcb326); /* Standard syntax (must be last) */
+    background-color: #fcb326;
+    font-weight: 700;
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1.5%;
+    padding-top: 2%;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid #ffd34c;
+    width: 85%;
+    margin-top: 25px;
+}
+.dl_button:hover {
+    background: -webkit-linear-gradient(#fcb326, #ffd34c); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fcb326, #ffd34c); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fcb326, #ffd34c); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fff526, #ffd34c); /* Standard syntax (must be last) */
+}
+div.panel-footer{
+    display: block;
+    padding: 15px 30px 25px;
+}
+
+.echoSoc_wrap, .echoSoc_overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.echoSoc_wrap {
+  z-index: 999999999;
+  display: none;
+}
+
+.echoSoc_overlay {
+  z-index: 777777;
+  background: #555;
+  opacity: .7;
+  display: none;
+}
+
+.echoSoc_frame {
+  background-color: #eee;
+  width: 400px;
+  position: absolute;
+  text-align: center;
+  border-radius: 3px;
+  z-index: 888888;
+  overflow: hidden;
+  display: none;
+  box-shadow: 0 0 0 1px #fff, 0 0 5px 2px rgba(0, 0, 0, .3);
+}
+
+.echoSoc_title {
+  background-color: #333;
+  position: relative;
+  padding: 4px 0;
+}
+
+.echoSoc_title h3 {
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+  margin: 3px 0;
+}
+.echoSoc_content {
+  padding: 6px;
+  color: #6f6f6f;
+}
+
+.echoSoc_description li {
+  text-align: center;
+  list-style: none;
+  padding: 5px 0;
+  display: block;
+}
+
+.echoSoc_buttons {
+  display: block;
+  min-height: 23px;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 0;
+  overflow: hidden;
+
+  transform: scale(0.9);
+}
+
+.echoSoc_countdown {
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+.echoSoc_countdown span {
+  color: #63c2ff;
+  font-weight: bold;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.form-search {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.vcenter {display:table!important; height:450px;}
+
+.vcenter div[class*='col'] {
+display: table-cell!important;
+vertical-align:middle;
+float:none;
+
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+a{
+  color           : #9c3;
+  text-decoration : none;
+}
+
+.starRating:not(old){
+  display        : inline-block;
+  width          : 7.5em;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.starRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating:not(old) > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('http://www.onesourcebook.com/img/star-off.svg');
+  background-size : contain;
+}
+
+.starRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background      : url('http://www.onesourcebook.com/img/star-on.svg');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+.starRating:not(old) > label:hover:before,
+.starRating:not(old) > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+img, .ads {cursor:pointer;}
+img:hover, .ads:hover {cursor:pointer;}
