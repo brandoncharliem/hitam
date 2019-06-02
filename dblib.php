@@ -22,7 +22,7 @@ $titlenya      =       ucwords(str_replace('-', ' ', $titlenya));
 $judul		=	$titlenya;
 $txt = text_lang();
 $gambar = $domains.'/'.$asin.'_500.jpg';
-$md5 = 'http://188.213.168.233/downloadnow?id='.$asin.'&file='.$judul.'.pdf';
+$md5 = 'http://<?php echo $domains; ?>/downloadnow?id='.$asin.'&file='.$judul.'.pdf';
 ?>
 <html lang="en">
 <head>
@@ -34,8 +34,8 @@ $md5 = 'http://188.213.168.233/downloadnow?id='.$asin.'&file='.$judul.'.pdf';
 <meta name="robots" content="noindex, nofollow">
 <link rel="shortcut icon" href="/favicon.ico" title="Favicon" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="http://188.213.168.233/dblib/style-new.css" media="screen, projection">
-<link rel="stylesheet" href="http://188.213.168.233/dblib/comment.css" media="screen, projection">
+<link rel="stylesheet" href="http://<?php echo $domains; ?>/dblib/style-new.css" media="screen, projection">
+<link rel="stylesheet" href="http://<?php echo $domains; ?>/dblib/comment.css" media="screen, projection">
 
 <!--Icon Fonts-->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600|Bree+Serif' rel='stylesheet' type='text/css'>
@@ -45,7 +45,7 @@ $md5 = 'http://188.213.168.233/downloadnow?id='.$asin.'&file='.$judul.'.pdf';
   <div class="row">
     <div id="header_region">
       <div id="logo" class="two_thirds">
-        <h1><a href="/"><img src="http://188.213.168.233/dblib/logo.png" alt="Off the Shelf eBook Landing Page" title="Off the Shelf eBook Landing Page" height="41" width="41"/>E-Books Library</a></h1>
+        <h1><a href="/"><img src="http://<?php echo $domains; ?>/dblib/logo.png" alt="Off the Shelf eBook Landing Page" title="Off the Shelf eBook Landing Page" height="41" width="41"/>E-Books Library</a></h1>
         
       </div>
     </div>
@@ -103,13 +103,13 @@ function googleTranslateElementInit() {
 <b>Type de fichier:</b> PDF EPUB MOBI.<br>
 <b>MD5 Hash Code:</b> <?php $str = "$md5"; echo md5($str);?><br>
 <b>ASIN/ISBN:</b> <?php echo $asin;?><br>
-			 <img src="http://188.213.168.233/dblib/liveG.gif"> <font size="4"color="blue"><b>Activité récente des membres</b></font>
+			 <img src="http://<?php echo $domains; ?>/dblib/liveG.gif"> <font size="4"color="blue"><b>Activite recente des membres</b></font>
 		</div>
 	<div class="panel-heading">
 		<div class="panel-body" id="activityBody">
 			<div id="loadingActivity">
-				<p class="text-center">Chargement de l'activité...</p>
-				<img class="center-block" id="loader" src="http://188.213.168.233/dblib/ajax_loading.gif" alt=""/>
+				<p class="text-center">Chargement de l'activite...</p>
+				<img class="center-block" id="loader" src="http://<?php echo $domains; ?>/dblib/ajax_loading.gif" alt=""/>
 			</div>
 
                       </div>   <br>
@@ -125,7 +125,7 @@ function googleTranslateElementInit() {
 
   </div>
 </article>
-<div class="online"><img src="http://188.213.168.233/dblib/circle_green.png"> <span id="dispnum1"></span> Members Online</div>
+<div class="online"><img src="http://<?php echo $domains; ?>/dblib/circle_green.png"> <span id="dispnum1"></span> Members Online</div>
 <script type="text/javascript">	var ttnum1=452; var tt1; function dis_num1() { document.getElementById ("dispnum1").innerHTML=ttnum1; ttnum1 = ttnum1+Math.floor(Math.random() * 31) -15; tt1 = setTimeout ("dis_num1()",5000);} dis_num1();</script>	
 <footer role="contentinfo">
   <div id="page_footer" class="row">
@@ -139,15 +139,15 @@ function googleTranslateElementInit() {
   </div>
 </footer>
 <a href="#" class="scrollup">Scroll up</a> 
-<script src="http://188.213.168.233/dblib/foundation.min.js"></script> 
-<script src="http://188.213.168.233/dblib/phrases.js"></script> 
-<script src="http://188.213.168.233/dblib/site.min.js"></script>
+<script src="http://<?php echo $domains; ?>/dblib/foundation.min.js"></script> 
+<script src="http://<?php echo $domains; ?>/dblib/phrases.js"></script> 
+<script src="http://<?php echo $domains; ?>/dblib/site.min.js"></script>
 
-<script src="http://188.213.168.233/dblib/jQuery.scrollSpeed.js"></script> 
-<script src="http://188.213.168.233/dblib/blur.js"></script>
-<script src="http://188.213.168.233/dblib/jquery.typewriter.min.js"></script>
-<script src="http://188.213.168.233/dblib/jquery.validate.min.js"></script>
-<script src="http://188.213.168.233/dblib/buzz.min.js"></script>
+<script src="http://<?php echo $domains; ?>/dblib/jQuery.scrollSpeed.js"></script> 
+<script src="http://<?php echo $domains; ?>/dblib/blur.js"></script>
+<script src="http://<?php echo $domains; ?>/dblib/jquery.typewriter.min.js"></script>
+<script src="http://<?php echo $domains; ?>/dblib/jquery.validate.min.js"></script>
+<script src="http://<?php echo $domains; ?>/dblib/buzz.min.js"></script>
 
 
 <?php include('histats.php'); ?>
