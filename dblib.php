@@ -125,8 +125,7 @@ function googleTranslateElementInit() {
 
   </div>
 </article>
-<div class="online"><img src="http://<?php echo $domains; ?>/dblib/circle_green.png"> <span id="dispnum1"></span> Members Online</div>
-<script type="text/javascript">	var ttnum1=452; var tt1; function dis_num1() { document.getElementById ("dispnum1").innerHTML=ttnum1; ttnum1 = ttnum1+Math.floor(Math.random() * 31) -15; tt1 = setTimeout ("dis_num1()",5000);} dis_num1();</script>	
+
 <footer role="contentinfo">
   <div id="page_footer" class="row">
     <ul>
